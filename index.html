@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<link>
+    <meta charset="UTF-8">
+    <title>Lousa Virtual</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script type="text/javascript">
+        if(localStorage.getItem('name')){
+            window.location.href = "./lousa.html";
+        }
+        const getName = ()=>{
+            let nam = document.getElementById('name')
+            localStorage.setItem('name',nam.value)
+            window.location.href = "./lousa.html";
+        }
+    </script>
+</head>
+<body>
+
+    <div class="login">
+        <input type="text" id="name" placeholder="Digite seu nome..." onchange="getName()">
+    </div>
+    
+</body>
+</html>

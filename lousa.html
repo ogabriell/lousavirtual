@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Lousa Virtual</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script type="text/javascript">
+        if (!localStorage.getItem('name')) {
+            window.location.href = "./index.html";
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <span id="notification"></span>
+        <div class="room">
+            <input type="text" id="room" onchange="getRoom()" placeholder="Cod...">
+        </div>
+        <div class="nav">
+            <div class="brushMenu" id="brushMenu">
+                <span id="rangeText">1</span>
+                <input type="range" id="brushRange" name="vol" value="1" min="1" max="100" onchange="getRange()">
+            </div>
+            <div onclick="show('brushMenu')">
+                <img src="img/brush.png" id="brush">
+            </div>
+            <div class="colorMenu" id="colorMenu">
+                <input type="color" id="color" name="color" onchange="changeColor(value)">
+            </div>
+            <div onclick="show('colorMenu')">
+                <img src="img/color.png" id="color">
+            </div>
+            <div onclick="erase()">
+                <img src="img/eraser.png" id="eraser">
+            </div>
+            <div class="formsMenu" id="formsMenu">
+                <div class="triangle" onclick="triangle()">
+                    <img src="img/triangle.png" id="triangle">
+                </div>
+                <div class="square" onclick="square()">
+                    <img src="img/square.png" id="square">
+                </div>
+                <div class="circle" onclick="circle()">
+                    <img src="img/circle.png" id="circle">
+                </div>
+            </div>
+            <div onclick="show('formsMenu')">
+                <img src="img/forms.png" id="forms">
+            </div>
+            <div onclick="ruler()">
+                <img src="img/ruler.png" id="ruler">
+            </div>
+            <div class="settingsMenu" id="settingsMenu">
+                <span class="settingsText">Mudar nome</span>
+                <input type="text" id="name" name="name" onchange="getName()" placeholder="Digite seu nome...">
+            </div>
+            <div onclick="show('settingsMenu')" class="settings">
+                <img src="img/settings.png" id="settings">
+            </div>
+        </div>
+        <canvas class="board" id="board"></canvas>
+    </div>
+    <!--Scripts-->
+    <script src="./node_modules/socket.io-client/dist/socket.io.js"></script>
+    <script type="text/javascript">
+        const show = (id) => {
+            let show = document.getElementById(id).style.visibility
+            if (show !== "visible") {
+                document.getElementById(id).style.visibility = "visible"
+            } else {
+                document.getElementById(id).style.visibility = 'hidden'
+            }
+        }
+        const getName = (n) => {
+            let nam = document.getElementById('name')
+            if (n) { return localStorage.getItem('name') }
+            localStorage.setItem('name', nam.value)
+            alert('Nome alterado')
+        }
+    </script>
+    <script src="script.js">
+    </script>
+</body>
+</html>

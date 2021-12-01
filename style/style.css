@@ -1,0 +1,231 @@
+*{
+    margin:0;
+    padding:0;
+}
+body, html{
+    display: block;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    user-select: none;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+.nav > div > img{
+    pointer-events: none;
+    position: relative;
+    width: 80%;
+    left:50%;
+    transform: translate(-50%,0);
+}
+.nav > div{
+    cursor: pointer;
+}
+#brush{
+    width: 90%;
+}
+#forms{
+    width: 130%;
+}
+#ruler{
+    margin-top: -5px;
+    width: 82%;
+}
+.settings{
+    position: relative;
+    bottom: -2%;
+}
+.settingsMenu{
+    visibility: hidden;
+    margin-left: 2px;
+    position:absolute;
+    left:100%;
+    width: 130px;
+    height: 50px;
+    background-color:#f7f7f7;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.settingsMenu > input{
+    background-color:#f5f4f4;
+    width: 85%;
+    position: relative;
+    border:none;
+    border-bottom: 2px solid black;
+    left:50%;
+    transform: translate(-50%,0);
+}
+.settings > input:focus{
+    box-shadow: none;
+    outline: none;
+}
+.settingsText{
+    position: relative;
+    left:15%;
+}
+.board{
+    cursor: crosshair;
+    background-color: white;
+    position: static;
+}
+
+.nav{
+    position: absolute;
+    background-color: #e9e9e9;
+    width: 3.5em;
+    height: 21em;
+    top: 50%;
+    left: 0.5%;
+    transform: translate(0,-50%);
+    border-radius: 16px;
+    border: 1px solid black;
+    display: block;
+}
+
+.brushMenu{
+    visibility: hidden;
+    margin-left: 2px;
+    position:absolute;
+    left:100%;
+    width: 130px;
+    height: 50px;
+    background-color:#f7f7f7;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.brushMenu > #brushRange{
+    position: relative;
+    width: 100%;
+    bottom: -50%;
+}
+.brushMenu > #rangeText{
+    width: 100%;
+    position: absolute;
+    text-align: center;
+}
+
+.formsMenu{
+    visibility: hidden;
+    margin-left: 2px;
+    display: block;
+    position:absolute;
+    left:100%;
+    width: 150px;
+    height: 50px;
+    background-color:#f7f7f7;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.formsMenu > div > img{
+    pointer-events: none;
+}
+.triangle, .square, .circle{
+    top: 50%;
+    transform: translate(0,-50%);
+    
+}
+.triangle{
+    position: absolute;
+    width: 33%;
+    left:2%;
+}
+.triangle > img{
+    position: relative;
+    width: 85%;
+    height:85%;
+}
+.square{
+    position: absolute;
+    width: 33%;
+    left:38%
+    
+}
+.square > img{
+    position: relative;
+    width: 75%;
+    height:75%;
+}
+.circle{
+    position: absolute;
+    width: 33%;
+    left:68%
+}
+.circle > img{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.colorMenu{
+    visibility: hidden;
+    margin-left: 2px;
+    position:absolute;
+    left:100%;
+    width: 55px;
+    height: 55px;
+    background-color:#f7f7f7;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+#colorMenu > input{
+    position: relative;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    height: 50px;
+    width: 50px;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    border-radius: 50%;
+}
+#color::-webkit-color-swatch-wrapper {
+    padding: 0; 
+}
+#color::-webkit-color-swatch {
+    border: none;
+    border-radius: 50%;
+}
+.room{
+    position: absolute;
+    top:0;
+    right: 0;
+    display: block;
+    color: #000000;
+}
+#room{
+    background-color: transparent;
+    border:none;
+    border-bottom: 2px solid black;
+    width: 60px;
+}
+.login{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width: 250px;
+}
+.login > #name{
+    width: 100%;
+    height: 25px;
+    position: relative;
+    border:none;
+    border-bottom: 2px solid black;
+}
+#name:focus, #room:focus{
+    box-shadow: none;
+    outline: none;
+}
+#notification{
+    visibility: hidden;
+    position: absolute;
+    height: 30px;
+    width: 100%;
+    top:5px;
+    left: 5px;
+    border-radius: 14px;
+    color:black;
+}
