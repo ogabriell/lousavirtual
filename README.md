@@ -24,7 +24,7 @@ $ git clone https://github.com/ogabriell/lousavirtual && cd lousavirtual
   - Step 2
 </h3>
 <p>
-	install dependencies with npm
+	install the dependencies with npm
 </p>
 
 ```
